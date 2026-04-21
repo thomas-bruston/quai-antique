@@ -1,0 +1,359 @@
+
+
+/* Groupe de champ */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Carte or — conteneur principal */
+.form-card {
+    background: var(--gold);
+    border-radius: 1.5rem;
+    padding: 2.5rem 3rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--black);
+}
+
+.form-card-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-align: center;
+    color: var(--black);
+    margin-bottom: 2rem;
+}
+
+/* Labels */
+.form-card .form-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: var(--black);
+    font-weight: 400;
+    margin-bottom: 0.35rem;
+}
+
+/* Inputs */
+.form-card .form-control {
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(10, 10, 10, 0.35);
+    border-radius: 0.5rem;
+    color: var(--black);
+    padding: 0.6rem 0.9rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color var(--transition);
+    -webkit-appearance: none;
+}
+
+.form-card .form-control:focus {
+    border-color: var(--black);
+}
+
+.form-card .form-control::placeholder {
+    color: rgba(10, 10, 10, 0.3);
+}
+
+/* Message d'erreur sous un champ */
+.form-error {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    color: #e07a5f;
+    margin-top: 0.35rem;
+    display: block;
+}
+
+/* Carte large pour la réservation */
+.form-card--large {
+    max-width: 750px;
+}
+
+/* Texte placeholder créneaux */
+.slots-placeholder,
+.slots-loading {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: rgba(10, 10, 10, 0.5);
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* Séparateur horizontal */
+.form-card-separator {
+    border: none;
+    border-top: 1px solid rgba(10, 10, 10, 0.15);
+    margin: 1.5rem 0;
+}
+
+/* Lien secondaire (ex: "Pas encore inscrit ?") */
+.form-card-link {
+    display: block;
+    text-align: center;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    color: var(--black);
+    opacity: 0.6;
+    margin-top: 1rem;
+    transition: opacity var(--transition);
+}
+
+.form-card-link:hover {
+    opacity: 1;
+}
+
+/* Bouton principal (noir sur fond or) */
+.btn-card {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.8rem 2.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+    text-align: center;
+}
+
+.btn-card:hover {
+    background: #1a1a1a;
+    color: var(--gold);
+}
+
+.btn-card-full {
+    width: 100%;
+}
+
+/* Toggle mot de passe */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper .form-control {
+    padding-right: 2.5rem;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(10, 10, 10, 0.5);
+    font-size: 0.9rem;
+    padding: 0;
+    transition: color var(--transition);
+}
+
+.password-toggle:hover {
+    color: var(--black);
+}
+
+/* Sélecteur de convives (boutons 1→10) */
+.convives-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.convives-btn {
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(10, 10, 10, 0.4);
+    border-radius: 0.5rem;
+    background: transparent;
+    color: var(--black);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition), border-color var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.convives-btn:hover,
+.convives-btn.active {
+    background: var(--black);
+    color: var(--gold);
+    border-color: var(--black);
+}
+
+/* Créneaux horaires */
+.slots-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+}
+
+.slot-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid rgba(10, 10, 10, 0.3);
+    border-radius: 0.5rem;
+    background: transparent;
+    color: var(--black);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+}
+
+.slot-btn:hover,
+.slot-btn.active {
+    background: var(--black);
+    color: var(--gold);
+    border-color: var(--black);
+}
+
+.slot-btn.unavailable {
+    opacity: 0.35;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.slot-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: #4caf50;
+}
+
+.slot-dot.unavailable {
+    background: #e07a5f;
+}
+
+/* Alerts */
+.alert {
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    border-left: 2px solid;
+}
+
+.alert-error {
+    border-color: #e07a5f;
+    color: #e07a5f;
+    background: rgba(224, 122, 95, 0.05);
+}
+
+.alert-success {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201, 168, 76, 0.05);
+}
+
+/* Flash messages */
+.flash-messages {
+    position: fixed;
+    top: 6rem;
+    right: 2rem;
+    z-index: 150;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 320px;
+}
+
+/* --- Utilitaires --- */
+
+.gold-separator {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 1.5rem auto;
+    opacity: 0.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.page-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--white);
+    opacity: 0.5;
+    text-align: center;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+/* Liste des réservations */
+.reservations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.reservation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.reservation-date {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--black);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.reservation-details {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--black);
+    opacity: 0.7;
+}
+
+.reservation-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.btn-card-danger {
+    background: #e07a5f;
+    color: var(--white);
+}
+
+.btn-card-danger:hover {
+    background: #c0614a;
+    color: var(--white);
+}

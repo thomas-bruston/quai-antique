@@ -1,0 +1,249 @@
+/* ============================================================
+   LE QUAI ANTIQUE — Layout (header, nav overlay, footer)
+   ============================================================ */
+
+/* --- Header --- */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: flex-start;
+    padding: 2rem 2.5rem 1rem;
+    background: transparent;
+}
+
+.header-left {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 0.25rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-top: 0.25rem;
+}
+
+.header-nav-link {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    transition: color var(--transition);
+}
+
+.header-nav-link:hover {
+    color: var(--gold-light);
+}
+
+.header-brand {
+    text-align: center;
+}
+
+.header-brand-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.header-brand-name {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    transition: color var(--transition);
+}
+
+.header-brand-sub {
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    color: var(--white);
+    opacity: 0.8;
+}
+
+.header-brand-link:hover .header-brand-name {
+    color: var(--gold-light);
+}
+
+/* Header simplifié (pages intérieures) */
+.site-header.header-simple {
+    grid-template-columns: 1fr 1fr;
+}
+
+.site-header.header-simple .header-brand {
+    display: none;
+}
+
+.site-header.header-simple .header-right {
+    justify-content: flex-end;
+}
+
+/* --- Burger --- */
+
+.menu-burger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.burger-line {
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+/* --- Nav overlay --- */
+
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(10, 10, 10, 0.97);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.nav-overlay:not([hidden]) {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.nav-overlay[hidden] {
+    display: flex !important;
+}
+
+.nav-overlay-close {
+    position: absolute;
+    top: 2rem;
+    right: 2.5rem;
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-family: var(--font-ui);
+    transition: color var(--transition);
+}
+
+.nav-overlay-close:hover {
+    color: var(--white);
+}
+
+.nav-overlay-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-overlay-link {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: var(--white);
+    opacity: 0.7;
+    transition: opacity var(--transition), color var(--transition);
+    padding: 0.4rem 1rem;
+    display: block;
+    text-align: center;
+}
+
+.nav-overlay-link:hover {
+    opacity: 1;
+    color: var(--gold);
+}
+
+.nav-overlay-link--logout {
+    color: var(--gold-dark);
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+}
+
+.nav-overlay-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold-dark);
+    margin: 0.75rem auto;
+    opacity: 0.5;
+}
+
+/* --- Footer --- */
+
+.site-footer {
+    margin-top: auto;
+    padding: 1.5rem 2.5rem;
+    background: transparent;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-link {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    transition: color var(--transition);
+}
+
+.footer-link:hover {
+    opacity: 1;
+    color: var(--gold);
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 768px) {
+    .site-header {
+        grid-template-columns: 1fr auto 1fr; /* ← était "auto 1fr auto" */
+        padding: 1.5rem 1.5rem 1rem;
+    }
+
+    .header-brand-name {
+        font-size: 1.1rem;
+        letter-spacing: 0.12em;
+        text-align: center;
+    }
+
+    .header-brand-sub {
+        display: none;
+    }
+
+    /* Réduire le lien RÉSERVER / ACCUEIL */
+    .header-nav-link {
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+    }
+
+    .footer-nav {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+}

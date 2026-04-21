@@ -1,0 +1,339 @@
+/* ============================================================
+   LE QUAI ANTIQUE — Styles spécifiques aux pages
+   ============================================================ */
+
+/* --- Accueil — Hero full-screen --- */
+
+body.page-home {
+    background-image: url('/images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+    padding: 10rem 2rem 4rem;
+}
+
+.hero-tagline {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    color: var(--white);
+    opacity: 0.85;
+    text-transform: uppercase;
+}
+
+/* --- Pages intérieures --- */
+
+.page-inner {
+    background: var(--black);
+    padding-top: 8rem;
+    flex: 1;
+}
+
+/* --- Galerie --- */
+
+.gallery-header {
+    text-align: center;
+    padding: 8rem 2rem 3rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.75);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CTA réservation */
+.gallery-cta {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.gallery-cta-btn {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 1rem 3rem;
+    transition: background var(--transition), color var(--transition);
+}
+
+.gallery-cta-btn:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 1rem;
+    }
+}
+
+/* --- Page carte & menus --- */
+
+body.page-card {
+    background-image: url('/images/menuBackground.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.card-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 8rem 4rem 6rem;
+}
+
+.card-section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.card-title {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+}
+
+.card-subtitle {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    opacity: 0.8;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.card-column {
+    text-align: center;
+}
+
+.card-column-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.card-column-desc {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--white);
+    opacity: 0.85;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.card-column-price {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--white);
+    margin: 0.75rem 0;
+}
+
+.card-dish {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.card-dish-name {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    margin-bottom: 0.35rem;
+}
+
+.card-dish-desc {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--white);
+    opacity: 0.75;
+    line-height: 1.5;
+}
+
+.card-dish-separator {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin: 1rem auto 0;
+    opacity: 0.5;
+}
+
+.card-empty {
+    text-align: center;
+    font-family: var(--font-ui);
+    color: var(--white);
+    opacity: 0.5;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .card-section {
+        padding: 7rem 1.5rem 4rem;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .card-title {
+        font-size: 1.8rem;
+    }
+}
+
+.form-page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7rem 2rem 3rem;
+}
+
+/* --- Dashboard admin --- */
+
+.admin-dashboard {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.admin-dashboard-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.admin-dashboard-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+}
+
+.admin-dashboard-sub {
+    font-family: var(--font-ui);
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    color: var(--white);
+    opacity: 0.6;
+    margin-top: 0.5rem;
+}
+
+.admin-dashboard-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+}
+
+.admin-dashboard-link {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: var(--white);
+    opacity: 0.7;
+    transition: opacity var(--transition), color var(--transition);
+    padding: 0.4rem 1rem;
+    display: block;
+    text-align: center;
+}
+
+.admin-dashboard-link:hover {
+    opacity: 1;
+    color: var(--gold);
+}
+
+.admin-dashboard-link--logout {
+    font-size: 1rem;
+    color: var(--gold-dark);
+    letter-spacing: 0.1em;
+}
+
+.admin-dashboard-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold-dark);
+    margin: 0.75rem auto;
+    opacity: 0.5;
+}
